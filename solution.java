@@ -1,26 +1,18 @@
-import java.util.*;
-class solution {
-    public static long maxScore(int[] nums1, int[] nums2, int k) {
+class Solution {
+    public static long helper(int row,int col,int sum,int [][]points){
+        if(row==points.length) return sum;
         long ans=0;
-        PriorityQueue<int []>pq=new PriorityQueue<>((a,b)->
-            a[1]-b[1]);
-        for(int i=0;i<nums1.length;i++){
-            pq.add(new int[]{nums1[0],nums2[0]});
+        for(int j=0;j<points[0].length;j++){
+            ans=Math.max(ans,helper(row+1,j,sum+points[row][j]-Math.abs(col-j),points));
         }
-        System.out.println(pq.size());
-        for(int i=0;i<nums1.length-k;i++) pq.remove();
-        int min=Integer.MAX_VALUE;
-        while(!pq.isEmpty()){
-            min=Math.min(min,pq.peek()[1]);
-            ans+=pq.peek()[0];
-            pq.remove();
-        }
-        System.out.println(min);
-        return ans*min;
+        return ans;
+    }
+    public static long maxPoints(int[][] points) {
+        return helper(0,0,0,points);
     }
     public static void main(String[] args) {
-        int nums1[]={4,2,3,1,1};
-        int nums2[]={7,5,10,9,6};
-        System.out.println(maxScore(nums1, nums2, 1));
+        int [][]points={{1,2,3},{1,5,1},{3,1,1}};
+        System.out.println("hana"+0);
+        System.out.println(maxPoints(points));
     }
 }
