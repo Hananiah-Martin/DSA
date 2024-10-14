@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 public class arraylist {
     public static void swap(ArrayList<Integer>list,int indx1,int indx2){

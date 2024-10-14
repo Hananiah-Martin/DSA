@@ -33,9 +33,6 @@ public class anagrams {
         else{
             System.out.println("false");
         }
-        for (String string : args) {
-            
-        }
     }
 
 }

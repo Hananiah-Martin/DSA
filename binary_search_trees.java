@@ -151,7 +151,7 @@ public class binary_search_trees {
         root=insert(root, values[i]);
       }
       ArrayList<Integer>path=new ArrayList<>();
-      printroot2leaf(root,path);
-      System.out.println(isValidBst(root,null,null));
+    //   printroot2leaf(root,path);
+      printInRange(root, 1, 8);
     }
 }

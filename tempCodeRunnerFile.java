@@ -1,1 +1,1 @@
-
+printroot2leaf(root,path);
